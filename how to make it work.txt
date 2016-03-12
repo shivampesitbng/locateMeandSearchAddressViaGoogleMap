@@ -1,0 +1,4 @@
+locate me feature DOESNOT WORK on CHROME as chrome doesnot allow user to trace the location.
+
+WORKS on FIREFOX & LOCALHOST
+
