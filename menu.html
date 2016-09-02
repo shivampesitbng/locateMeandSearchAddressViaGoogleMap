@@ -1,0 +1,531 @@
+<html>
+<head>
+<title>Website | Menu</title>
+<!--link rel="stylesheet" type="text/css" href="menu/menu.css"-->
+<!--script src="menu/menu.js" type="text/javascript"></script-->
+
+<style>
+body {
+  margin: 5px;
+  background: grey;
+}
+
+div[class^="col-"] {
+  box-sizing: border-box;
+  padding: 20px;
+  border: 10px solid grey;
+  background: white;
+}
+
+div[class^="col-"] h1,
+div[class^="col-"] h2 {
+  margin-top: 0;
+}
+
+.col-1,
+.col-3 {
+  float: left;
+  width: 25%;
+}
+
+.col-2 {
+  float: left;
+  width: 50%;
+  height: 464px;
+  /*max-height:100vh;*/
+  
+  overflow: auto;
+}
+/*------------------------------------*/
+
+.box {
+  display: block;
+  margin: 4px;
+  padding: 4px;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, .8);
+  cursor: pointer;
+}
+
+.box:hover {
+  color: darkorange;
+  background-color: rgba(0, 0, 0, .9)
+}
+
+.box::selection {
+  background: transparent;
+  color: ;
+}
+
+#cart {
+  margin: 1px;
+  height: 128px;
+  border: 1px solid black;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.amount {
+  float: right;
+}
+/*in the middle column*/
+
+.countCont {
+  display: inline-block;
+  float: right;
+}
+/*in the cart*/
+
+.countCont.smaller {
+  float: none;
+}
+
+.countCont div {
+  display: inline-block;
+  width: 32px;
+  /*size change for column2*/
+  
+  height: 24px;
+  /*size change for column2*/
+  
+  padding-top: 8px;
+  /*size change for column2*/
+  
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 40px;
+}
+
+.countCont.smaller div {
+  width: 16px;
+  /*size change for column3*/
+  
+  height: 16px;
+  /*size change for column3*/
+  
+  padding-top: 0;
+  /*size change for column3*/
+}
+
+.countCont::selection {
+  background-color: transparent;
+}
+
+.countDisp {
+  background-color: white;
+  color: #333;
+}
+
+.countDisp::selection {
+  background-color: transparent;
+  color: #333;
+}
+
+.count {
+  background-color: darkorange;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 1px 0 black;
+  cursor: pointer;
+}
+
+.count:active {
+  position: relative;
+  top: 2px;
+}
+
+.count::selection {
+  background-color: transparent;
+  color: white;
+}
+
+.hidden {
+  display: none;
+  color: white;
+}
+
+.show:hover {
+  color: white;
+}
+/*changes the breads, veg, desserts boxes*/
+
+#breads,
+#veg,
+#desserts {
+  padding: 6px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+#cart {
+  margin-top: ;
+}
+
+#total {
+  display: inline-block;
+  margin-top: 8px;
+  color: black;
+  float: right;
+}
+
+#cartUl,
+#cartUl li {
+  margin: 0;
+  margin-left: -10px;
+}
+
+#cart p {
+  margin: 0;
+}
+
+.cart {
+  display: flex;
+}
+
+.cart p:first-child {
+  text-align: left;
+}
+
+.cart p {
+  flex: 1;
+  padding: 4px;
+  background-color: lightgray;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  border-right: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+}
+
+.cart p:last-child {
+  border-right: none;
+}
+
+#cartUlroti,
+#cartUlparot,
+#cartUlcakes {
+  display: none;
+}
+
+.saved-addresses-btn {
+  width: 250px;
+  padding: 4px 1px;
+  background: solid;
+  color: black;
+  font-weight: normal;
+  font-color: white;
+  letter-spacing: 1px;
+  text-shadow: none;
+  border: red;
+  border-radius: px;
+  position: relative;
+  left: -2px;
+  top: -1px;
+  height: 35px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px white;
+}
+/*----------changed 11/10/15---------*/
+
+#cartUlroti {
+  width: 100%;
+}
+
+#rotiLi {
+  display: flex;
+}
+
+#rotiLi p,
+#rotiLi .countDisp,
+#subRoti {
+  flex: 2;
+  border: 1px transparent;
+}
+
+#subRoti {
+  flex: 1;
+}
+</style>
+
+
+
+</head>
+<body>
+<div class="col-1">
+  <h2>Fixed left col</h2>
+  <a href='#breads' class='box'>breads</a>
+  <a href='#veg' class='box'>veg</a>
+  <a href='#desserts' class='box'>desserts</a>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+  <p>rtewteryeydryht</p>
+</div>
+
+<div class="col-2">
+  <h1>Title of the middle column</h1>
+
+  <br/>
+  <br/>
+  <a name="chapter4"></a>
+  <a id='breads' class='box'>breads <br>
+    <!--Here's what I changed to get the stuff over to the right-->
+    <a id='rotiBox' class='box'>roti    <span class='amount'> Rs. 2.00 (click to add to cart)</span><br/><br/><div class='countCont'><div class='count' id='countMinRoti'>-</div><div class='countDisp' id='countDispRoti'>0</div><div class='count' id='countAddRoti'>+</div></div><br><br>
+      <span class='show'>Show desription</span><p class='hidden'>chicken </p></a>
+  <!------------------------------------------->
+  <a id='parota' class='box'>parota    <span class='amount'> Rs. 3.00 (click to add to cart)</span><br/><br/><div class='countCont'>
+  <div class='count'>-</div>
+  <div class='countDisp'>0</div>
+        <div class='count'>+</div></div><br><br>
+      <span class='show'>Show desription</span><p class='hidden'>chicken </p></a>
+  <!---------------------------------->
+  <a id='cakes' class='box'>cakes    <span class='amount'> Rs. 4.00 (click to add to cart)</span><br/><br/><div class='countCont'>
+  <div class='count'>-</div>
+  <div class='countDisp'>0</div>
+        <div class='count'>+</div></div><br><br>
+     Show description</a>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <a id='veg' class='box'>veg </a>
+  <a id='paneer' class='box'>paneer    Rs. 6.00 (click to add to cart)<br><br>
+     Click to jump to last paragraph</a>
+  <a id='mixveg' class='box'>mix veg    Rs. 7.00 (click to add to cart)<br><br>
+     Click to jump to last paragraph</a>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <a id='desserts' class='box'>desserts </a>
+
+  <a id='mousse' class='box'>
+    <br>mousse Rs. 16.00 (click to add to cart)
+
+    <br>
+    <br> Click to jump to last paragraph</a>
+  <a id='icecream' class='box'>icecream    Rs. 17.00 (click to add to cart)<br><br>
+     Click to jump to last paragraph</a>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</div>
+
+<script>
+//used to update total
+var i = 0;
+
+//this will have to be a unique name for each one
+var roti = 0;
+
+//click the roti box to show roti in the cart
+rotiBox.onclick = function() {
+  cartUlroti.style.display = "inline-block";
+}
+
+//the one in the middle column
+countAddRoti.onclick = function() {
+
+  //+ in the counter
+  roti++;
+  countDispRoti.innerHTML = roti;
+  countDispRoti2.innerHTML = roti;
+
+  //adds to cart
+  subRoti.innerHTML = (roti * 2) + ".00";
+  i += 2;
+
+  //adds to total
+  total.innerHTML = "<span style='color:black;'>Total: </span> Rs. " + i + ".00";
+}
+countMinRoti.onclick = function() {
+
+  //- in the counter
+  roti--;
+  if (roti <= 0) {
+    roti = 0;
+    cartUlroti.style.display = "none";
+  }
+  countDispRoti.innerHTML = roti;
+  countDispRoti2.innerHTML = roti;
+
+  //subs from cart
+  subRoti.innerHTML = (roti * 2) + ".00";
+  i -= 2;
+  if (i <= 0) {
+    i = 0;
+  }
+  //adds to total
+  total.innerHTML = "<span style='color:black;'>Total: </span> Rs. " + i + ".00";
+}
+
+//the one in the cart
+countAddRoti2.onclick = function() {
+
+  //+ in the counter
+  roti++;
+  countDispRoti2.innerHTML = roti;
+  countDispRoti.innerHTML = roti;
+
+  //adds to cart
+  subRoti.innerHTML = (roti * 2) + ".00";
+  i += 2;
+
+  //adds to total
+  total.innerHTML = "<span style='color:black;'>Total: </span> Rs. " + i + ".00";
+}
+countMinRoti2.onclick = function() {
+
+  //- in the counter
+  roti--;
+  if (roti <= 0) {
+    roti = 0;
+    cartUlroti.style.display = "none";
+  }
+  countDispRoti2.innerHTML = roti;
+  countDispRoti.innerHTML = roti;
+
+  //subs from cart
+  subRoti.innerHTML = (roti * 2) + ".00";
+  i -= 2;
+  if (i <= 0) {
+    i = 0;
+  }
+  //adds to total
+  total.innerHTML = "<span style='color:black;'>Total: </span> Rs. " + i + ".00";
+}
+
+//show/hide description
+var show = document.getElementsByClassName("show");
+var hidden = document.getElementsByClassName("hidden");
+
+//this will have to go up by 1 for each one; like show1, show2, show3, etc
+var show0 = true;
+
+//show[0] will go up by 1 for each one
+show[0].addEventListener("click", function() {
+  if (show0) {
+    hidden[0].style.display = "block"; //has to be the same number as show[]
+    show0 = false;
+  } else {
+    hidden[0].style.display = "none";
+    show0 = true;
+  }
+});
+//new show desc
+//show description
+
+var show = document.getElementsByClassName("show");
+var hidden = document.getElementsByClassName("hidden");
+
+var show1 = true; //this will have to go up by 1 for each one; like show1, show2, show3, etc
+
+//show[0] will go up by 1 for each one
+show[1].addEventListener("click", function() {
+  if (show1) {
+    hidden[1].style.display = "block"; //has to be the same number as show[]
+    show1 = false;
+  } else {
+    hidden[1].style.display = "none";
+    show1 = true;
+  }
+});
+
+var saved = document.getElementById("saved-addresses-btn");
+
+saved.addEventListener("click", function() {
+  var col3 = document.getElementsByClassName("col-3")[0].innerHTML;
+  document.body.innerHTML = col3;
+  document.getElementById("saved-addresses-btn").style.display = "none";
+  //document.getElementsByClassName("countCont")[0].style.display = "none";
+
+  var counts = document.getElementsByClassName("count");
+  for (var i = 0; i < counts.length; i++) {
+    counts[i].style.display = "none";
+  }
+  document.getElementById("countDispRoti2").style.border = "none";
+  document.getElementById("countDispRoti2").style.backgroundColor = "transparent";
+
+  document.getElementById("countDispRoti2").style.color = "black";
+  var currentHTML = document.getElementById("countDispRoti2").innerHTML;
+  document.getElementById("countDispRoti2").innerHTML = "x" + currentHTML;
+});
+</script>
+
+<div class="col-3">
+  <h2>Fixed right col</h2>
+
+  <input placeholder=' your location' class='loc' style='margin-bottom:16px; height:32px; border:1px solid'></input>
+  <br/>
+  <input type='time' id='yourTime'></input>
+  <input type='date' id='yourDate'></input>
+  <br/>
+  <br/>
+  <textarea placeholder="notes"></textarea>
+  <br/>
+  <br/> YOUR CART
+  <div id='cart'>
+    <div class='cart'>
+      <p>Item </p>
+      <p>Quantity</p>
+      <p>Sub Total</p>
+    </div>
+    <ul id='cartUlroti'>
+      <li id='rotiLi'>roti
+        <p style='display:inline-block; width:116px;'></p>
+        <div class='countCont smaller'>
+          <div class='count' id='countMinRoti2'>-</div>
+          <div class='countDisp' id='countDispRoti2'>0</div>
+          <div class='count' id='countAddRoti2'>+</div>
+        </div>
+        <p style='display:inline-block; width:102px;'></p><span id='subRoti'>0.00<span></li>
+    </ul>
+    <ul id='cartUlparot'></ul>
+    <ul id='cartUlcakes'></ul>
+</div><span id='total'><span style='color:black;'>Total: </span> Rs. 0.00</span>
+        <button id="saved-addresses-btn" data-target="#saved_address" type="button" class="saved-addresses-btn">
+          <span style="color:#fff;" class="glyphicon glyphicon-map-marker"></span>
+          <span>&nbsp;&nbsp;Proceed to pay</span>
+        </button>
+  </div>
+  </body>
+  </html>
